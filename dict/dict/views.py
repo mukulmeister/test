@@ -58,21 +58,3 @@ def weather(request):
 
 
 
-#def home(request):
-
-  #  form = InputForm()
-
-
-   # return render(request,'index.html', context={'form': form,'weather':weather()})
-
-
-
-#def submit(request):
-   # pass
-
-    #data = form.Shift.data
-
-    #if request.method=='POST':
-    #    send_email(data,rec)
-#
- #       return render('shift.html', t2=rec, priority=Pri,state=STATES, maji=mi, shiftsum=data)
