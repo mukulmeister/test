@@ -1,0 +1,26 @@
+/* General styles for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Icon styling with important to override conflicting styles */
+.icon {
+    width: 20px !important; /* Force width */
+    height: 20px !important; /* Force height */
+    vertical-align: middle; /* Align icons to the middle of the text */
+    display: inline-block; /* Ensure it behaves like an inline element */
+    object-fit: contain; /* Ensure the image scales proportionally */
+}

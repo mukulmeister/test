@@ -1,61 +1,14 @@
-
 <!DOCTYPE html>
-<html lang="en" xmlns:word-wrap="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
-{% load static %}
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title> {{ title }} : Graph</title>
-
-    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
-    <img src="{% static 'weather.png' %}" style="max-height: 100px; max-width: 100px;" align="left">
+    <title>Weather App</title>
 </head>
 <body>
-<div class="block" align="center">
-<form action="{% url 'weather' %}" method="post" >
-
-    {% csrf_token %}
-    {{ form }}
-
-    <input type="submit" value="Submit" >
-
-</div>
-<div align='center' >
-<h1>Weather</h1>
-
-    <table style="font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 70% ">
-
-        <th bgcolor="#B2F1C9" style="padding-top: 12px; padding-bottom: 12px; text-align: left">City</th>
-
-
-        <th bgcolor="#B2F1C9" style="padding-top: 12px; padding-bottom: 12px; text-align: left">Wind_Dir</th>
-
-        <th bgcolor="#B2F1C9" style="padding-top: 12px; padding-bottom: 12px; text-align: left">Temperature</th>
-
-
-
-        <tr>
-                <td style="border: 1px solid #ddd;
-    padding: 8px;">{{ weather.location.name }}</td>
-
-                <td style="border: 1px solid #ddd;
-    padding: 8px;">{{ weather.current.wind_dir }}</td>
-                <td style="border: 1px solid #ddd;
-    padding: 8px;">{{ weather.current.temp_c  }} Celcius</td>
-
-            </tr>
-
-
-    </table>
-
-
-
-
-
-
-</div>
-</form>
-
+    <h1>Check the Weather</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Get Weather</button>
+    </form>
 </body>
 </html>
